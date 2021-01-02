@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shop_components_colors",
+  "info": {
+    "name": "colors",
+    "icon": "arrow-alt-circle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

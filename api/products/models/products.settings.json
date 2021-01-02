@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "price": {
+      "type": "integer"
+    },
+    "sale_price": {
+      "type": "integer"
+    },
+    "inventory": {
+      "type": "integer"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_hot": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_out_of_stock": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_sale": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_deal_of_the_day": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_black_friday": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_new": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_best_seller": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "specs": {
+      "type": "richtext"
+    },
+    "breif_desc": {
+      "type": "richtext"
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shop-components.colors"
+    },
+    "size": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shop-components.size"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shop-components.reviews"
+    },
+    "vendor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "category": {
+      "model": "category"
+    },
+    "brand": {
+      "model": "brand"
+    }
+  }
+}

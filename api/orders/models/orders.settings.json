@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "total_amount": {
+      "type": "decimal"
+    },
+    "comfirmed": {
+      "type": "boolean"
+    },
+    "products": {
+      "collection": "products"
+    }
+  }
+}

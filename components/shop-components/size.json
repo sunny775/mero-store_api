@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shop_components_sizes",
+  "info": {
+    "name": "size",
+    "icon": "apple-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "decimal"
+    }
+  }
+}
