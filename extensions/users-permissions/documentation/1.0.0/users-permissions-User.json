@@ -1273,6 +1273,24 @@
               "slug": {
                 "type": "string"
               },
+              "address": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "facebook_link": {
+                "type": "string"
+              },
+              "twitter_link": {
+                "type": "string"
+              },
+              "linkedin_link": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -1281,30 +1299,20 @@
               }
             }
           },
-          "orders": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "total_amount": {
-                "type": "number"
-              },
-              "comfirmed": {
-                "type": "boolean"
-              },
-              "products": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "storeName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthday": {
+            "type": "string"
           }
         }
       },
@@ -1350,7 +1358,19 @@
           "store": {
             "type": "string"
           },
-          "orders": {
+          "storeName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthday": {
             "type": "string"
           },
           "created_by": {

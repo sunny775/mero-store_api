@@ -62,8 +62,22 @@
     "store": {
       "model": "store"
     },
-    "orders": {
-      "collection": "orders"
+    "storeName": {
+      "type": "string",
+      "unique": false
+    },
+    "phone": {
+      "type": "text",
+      "unique": false
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
     }
   }
 }

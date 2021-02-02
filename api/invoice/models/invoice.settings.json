@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "name": "invoice"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "integer",
+      "required": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

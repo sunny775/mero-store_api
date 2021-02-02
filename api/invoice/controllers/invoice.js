@@ -5,11 +5,4 @@
  * to customize this controller
  */
 
-module.exports = {
-    // async find(ctx) {
-      
-      //const data = await strapi.services.category.find();
-
-      //ctx.send(data);
-    //},
-};
+module.exports = {};

@@ -516,8 +516,7 @@
     "schemas": {
       "Products": {
         "required": [
-          "id",
-          "slug"
+          "id"
         ],
         "properties": {
           "id": {
@@ -753,7 +752,19 @@
               "store": {
                 "type": "string"
               },
-              "orders": {
+              "storeName": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "fullName": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string"
+              },
+              "birthday": {
                 "type": "string"
               },
               "created_by": {
@@ -782,6 +793,9 @@
                 "type": "string"
               },
               "url": {
+                "type": "string"
+              },
+              "super_collection": {
                 "type": "string"
               },
               "created_by": {
@@ -824,9 +838,6 @@
         }
       },
       "NewProducts": {
-        "required": [
-          "slug"
-        ],
         "properties": {
           "title": {
             "type": "string"

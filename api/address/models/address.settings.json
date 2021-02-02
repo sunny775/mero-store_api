@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "addresses",
   "info": {
-    "name": "category",
+    "name": "address",
     "description": ""
   },
   "options": {
@@ -11,19 +11,26 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "title": {
+    "country": {
       "type": "string"
     },
-    "slug": {
+    "state": {
       "type": "string"
     },
-    "product_collection": {
+    "street": {
       "type": "string"
     },
-    "url": {
-      "type": "text"
+    "postcode": {
+      "type": "string"
     },
-    "super_collection": {
+    "city": {
+      "type": "string"
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "phone": {
       "type": "string"
     }
   }

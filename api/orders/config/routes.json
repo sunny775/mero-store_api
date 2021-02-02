@@ -10,6 +10,22 @@
     },
     {
       "method": "GET",
+      "path": "/orders/verify-payment",
+      "handler": "orders.verify",
+      "config": {
+        "policies": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orders/invoice",
+      "handler": "orders.fetchInvoice",
+      "config": {
+        "policies": null
+      }
+    },
+    {
+      "method": "GET",
       "path": "/orders/count",
       "handler": "orders.count",
       "config": {

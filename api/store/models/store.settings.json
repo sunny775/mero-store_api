@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
     "title": {
@@ -32,6 +32,21 @@
     },
     "slug": {
       "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "facebook_link": {
+      "type": "text"
+    },
+    "twitter_link": {
+      "type": "text"
+    },
+    "linkedin_link": {
+      "type": "text"
     }
   }
 }

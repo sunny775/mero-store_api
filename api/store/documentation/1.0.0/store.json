@@ -599,6 +599,25 @@
           },
           "slug": {
             "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "facebook_link": {
+            "type": "string"
+          },
+          "twitter_link": {
+            "type": "string"
+          },
+          "linkedin_link": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -616,6 +635,25 @@
           },
           "slug": {
             "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "facebook_link": {
+            "type": "string"
+          },
+          "twitter_link": {
+            "type": "string"
+          },
+          "linkedin_link": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"

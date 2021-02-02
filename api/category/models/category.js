@@ -14,7 +14,9 @@ module.exports = {
       }
     },
     beforeUpdate: async (params, data) => {
-      data.slug = slugify(data.title.toLowerCase());
+      if (data.title) {
+        data.slug = slugify(data.title.toLowerCase());
+      }
     },
   },
 };

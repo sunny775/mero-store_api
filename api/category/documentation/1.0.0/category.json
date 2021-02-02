@@ -533,6 +533,9 @@
           },
           "url": {
             "type": "string"
+          },
+          "super_collection": {
+            "type": "string"
           }
         }
       },
@@ -548,6 +551,9 @@
             "type": "string"
           },
           "url": {
+            "type": "string"
+          },
+          "super_collection": {
             "type": "string"
           },
           "created_by": {
