@@ -11,16 +11,26 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "total_amount": {
+    "invoice_total": {
       "type": "decimal"
     },
-    "comfirmed": {
-      "type": "boolean"
+    "shipping_cost": {
+      "type": "decimal"
     },
-    "products": {
-      "collection": "products"
+    "payments": {
+      "collection": "transaction"
     },
-    "owner": {
+    "customer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "transactions.customer"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": false,
+      "component": "transactions.items"
+    },
+    "vendor": {
       "plugin": "users-permissions",
       "model": "user"
     }

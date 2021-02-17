@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shop_components_specs",
+  "info": {
+    "name": "specs",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

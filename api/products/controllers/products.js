@@ -1,28 +1,44 @@
 'use strict';
+const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
 
-/**
- * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
- * to customize this controller
- */
 
 module.exports = {
-  async create (ctx) {
+
+  async create(ctx) {
     const { user } = ctx.state;
+    let entity;
 
-    if (!user) {
-      return ctx.throw(403, 'UnAuthorized Access Denied!', { user: 'not provided' });
+    if(!user)
+      return ctx.throw(403, 'You must be logged in to a vendor account!');
+
+    if (ctx.is('multipart')) {
+      let { data, files } = parseMultipartData(ctx);
+      
+      data = { ...data, vendor: data.vendor || user.id }
+      entity = await strapi.services.products.create(data, { files });
+    } else {
+      return ctx.throw(403, 'Product images are requirred!');
     }
-  const {vendor} = ctx.request.body;
+    return sanitizeEntity(entity, { model: strapi.models.products });
+  },
 
-  const productObj = {
-    ...ctx.request.body,
-    vendor: vendor || user.id,
-  };
+  async addImage(ctx) {
+    const { id } = ctx.params;
 
-  const data = await strapi.services.product.add(productObj);
+    const { files } = parseMultipartData(ctx);
+    const entity = await strapi.services.products.addImage({ id }, { files });
 
-  // Send 201 `created`
-  ctx.created(data);
-},
+    return sanitizeEntity(entity, { model: strapi.models.products });
+  },
+
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const entity = await strapi.services.products.findOne({ id });
+    console.log(entity)
+    await Promise.all(
+      entity.images.map((file) => strapi.plugins['upload'].services.upload.remove(file))
+    )
+    return strapi.query('products').delete(ctx.params);
+  },
 
 };

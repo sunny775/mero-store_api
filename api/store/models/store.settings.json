@@ -47,6 +47,9 @@
     },
     "linkedin_link": {
       "type": "text"
+    },
+    "reg_no": {
+      "type": "string"
     }
   }
 }

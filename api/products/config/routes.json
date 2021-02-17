@@ -41,6 +41,14 @@
       }
     },
     {
+      "method": "PUT",
+      "path": "/products/:id/addImage",
+      "handler": "products.addImage",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "DELETE",
       "path": "/products/:id",
       "handler": "products.delete",

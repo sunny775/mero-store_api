@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_transactions_addresses",
+  "info": {
+    "name": "address",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "street": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_transactions_items",
+  "info": {
+    "name": "items",
+    "icon": "asterisk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "item_total": {
+      "type": "decimal"
+    },
+    "qty": {
+      "type": "integer"
+    },
+    "image_url": {
+      "type": "text"
+    }
+  }
+}

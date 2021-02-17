@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_transactions_customers",
+  "info": {
+    "name": "customer",
+    "icon": "ankh"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "transactions.address"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phonenumber": {
+      "type": "string"
+    }
+  }
+}

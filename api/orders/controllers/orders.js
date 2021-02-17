@@ -38,7 +38,7 @@ module.exports = {
       return ctx.throw(403, 'UnAuthorized Access Denied!');
     }
     try {
-      const { tx_ref, shipping_cost, invoice_total, items, type, store } = ctx.session.order;
+      const { tx_ref, shipping_cost, invoice_total, items, type, vendor } = ctx.session.order;
 
       //verify
       const data = await strapi.services.orders.verify({
@@ -50,18 +50,23 @@ module.exports = {
       //create transactio doc
       const transaction = await strapi.services.orders.savePayment({
         tx_ref: data.tx_ref,
-        status: success,
+        status: success ? 'success' : data.status,
         charged_amount: data.charged_amount,
         type,
-        terms: fullPay ? 'full' : 'installment'
+        terms: fullPay ? 'full' : 'installment',
+        customer,
+        vendor
       })
 
+      if(!success){
+        return ctx.throw(403, 'Transaction Failed!');
+      }
       //const address = await strapi.services.address.find(ctx.state.user.id);
       //create order doc
       const order = await strapi.services.orders.saveOrder({
         payments: [transaction.id],
         customer,
-        seller: store, //store.id
+        vendor, //seller.id
         shipping_cost,
         invoice_total,
         items

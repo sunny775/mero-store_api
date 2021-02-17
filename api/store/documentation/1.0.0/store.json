@@ -615,6 +615,9 @@
           "linkedin_link": {
             "type": "string"
           },
+          "reg_no": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -649,6 +652,9 @@
             "type": "string"
           },
           "linkedin_link": {
+            "type": "string"
+          },
+          "reg_no": {
             "type": "string"
           },
           "published_at": {

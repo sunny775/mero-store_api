@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "review",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "content": {
+      "type": "text"
+    },
+    "store": {
+      "model": "store"
+    },
+    "product": {
+      "model": "products"
+    }
+  }
+}

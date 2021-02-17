@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "name": "transaction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "tx_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "charged_amount": {
+      "type": "decimal"
+    },
+    "type": {
+      "type": "string"
+    },
+    "terms": {
+      "type": "string"
+    },
+    "vendor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "customer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "transactions.customer"
+    }
+  }
+}

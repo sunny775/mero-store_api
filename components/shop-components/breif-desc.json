@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shop_components_breif_descs",
+  "info": {
+    "name": "breif_desc",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

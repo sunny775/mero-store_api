@@ -80,18 +80,12 @@
     "description": {
       "type": "richtext"
     },
-    "specs": {
-      "type": "richtext"
-    },
-    "breif_desc": {
-      "type": "richtext"
-    },
     "colors": {
       "type": "component",
       "repeatable": true,
       "component": "shop-components.colors"
     },
-    "size": {
+    "sizes": {
       "type": "component",
       "repeatable": true,
       "component": "shop-components.size"
@@ -110,6 +104,24 @@
     },
     "brand": {
       "model": "brand"
+    },
+    "breif_desc": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shop-components.breif-desc"
+    },
+    "specs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shop-components.specs"
+    },
+    "qty_sold": {
+      "type": "integer",
+      "default": 0
+    },
+    "commission": {
+      "type": "integer",
+      "default": 8
     }
   }
 }

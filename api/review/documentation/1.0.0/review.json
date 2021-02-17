@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/orders": {
+    "/reviews": {
       "get": {
         "deprecated": false,
-        "description": "Find all the orders's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Orders"
+                    "$ref": "#/components/schemas/Review"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new orders record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Review"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "requestBody": {
           "description": "",
@@ -247,134 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrders"
+                "$ref": "#/components/schemas/NewReview"
               }
             }
           }
         }
       }
     },
-    "/orders/verify-payment": {
+    "/reviews/count": {
       "get": {
         "deprecated": false,
         "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Orders"
-        ],
-        "parameters": []
-      }
-    },
-    "/orders/invoice": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "Retrieve orders document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Orders"
-        ],
-        "parameters": []
-      }
-    },
-    "/orders/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of orders documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -420,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/reviews/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one orders record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Review"
                 }
               }
             }
@@ -473,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "parameters": [
           {
@@ -490,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single orders record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Review"
                 }
               }
             }
@@ -535,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "requestBody": {
           "description": "",
@@ -543,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrders"
+                "$ref": "#/components/schemas/NewReview"
               }
             }
           }
@@ -563,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single orders record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single orders based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -609,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Review"
         ],
         "parameters": [
           {
@@ -628,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Orders": {
+      "Review": {
         "required": [
           "id"
         ],
@@ -636,116 +522,7 @@
           "id": {
             "type": "string"
           },
-          "invoice_total": {
-            "type": "number"
-          },
-          "shipping_cost": {
-            "type": "number"
-          },
-          "payments": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "tx_ref": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "charged_amount": {
-                "type": "number"
-              },
-              "type": {
-                "type": "string"
-              },
-              "terms": {
-                "type": "string"
-              },
-              "vendor": {
-                "type": "string"
-              },
-              "customer": {
-                "type": "component"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "customer": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "street": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "state": {
-                    "type": "string"
-                  }
-                }
-              },
-              "email": {
-                "type": "string"
-              },
-              "phonenumber": {
-                "type": "string"
-              }
-            }
-          },
-          "items": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "item_total": {
-                "type": "number"
-              },
-              "qty": {
-                "type": "integer"
-              },
-              "image_url": {
-                "type": "string"
-              }
-            }
-          },
-          "vendor": {
+          "author": {
             "required": [
               "id",
               "username",
@@ -807,62 +584,62 @@
                 "type": "string"
               }
             }
-          }
-        }
-      },
-      "NewOrders": {
-        "properties": {
-          "invoice_total": {
-            "type": "number"
           },
-          "shipping_cost": {
-            "type": "number"
-          },
-          "payments": {
+          "content": {
             "type": "string"
           },
-          "customer": {
-            "type": "object",
+          "store": {
             "required": [
-              "id"
+              "id",
+              "title",
+              "desc"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "title": {
+                "type": "string"
+              },
+              "desc": {
+                "type": "string"
+              },
+              "profilePhoto": {
+                "type": "string"
+              },
+              "slug": {
                 "type": "string"
               },
               "address": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "street": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "state": {
-                    "type": "string"
-                  }
-                }
-              },
-              "email": {
                 "type": "string"
               },
-              "phonenumber": {
+              "phone": {
+                "type": "string"
+              },
+              "facebook_link": {
+                "type": "string"
+              },
+              "twitter_link": {
+                "type": "string"
+              },
+              "linkedin_link": {
+                "type": "string"
+              },
+              "reg_no": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
                 "type": "string"
               }
             }
           },
-          "items": {
-            "type": "object",
+          "product": {
             "required": [
               "id"
             ],
@@ -873,22 +650,118 @@
               "title": {
                 "type": "string"
               },
+              "slug": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "price": {
-                "type": "number"
-              },
-              "item_total": {
-                "type": "number"
-              },
-              "qty": {
                 "type": "integer"
               },
-              "image_url": {
+              "sale_price": {
+                "type": "integer"
+              },
+              "inventory": {
+                "type": "integer"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "is_featured": {
+                "type": "boolean"
+              },
+              "is_hot": {
+                "type": "boolean"
+              },
+              "is_out_of_stock": {
+                "type": "boolean"
+              },
+              "is_active": {
+                "type": "boolean"
+              },
+              "is_sale": {
+                "type": "boolean"
+              },
+              "is_deal_of_the_day": {
+                "type": "boolean"
+              },
+              "is_black_friday": {
+                "type": "boolean"
+              },
+              "is_new": {
+                "type": "boolean"
+              },
+              "is_best_seller": {
+                "type": "boolean"
+              },
+              "description": {
+                "type": "string"
+              },
+              "colors": {
+                "type": "component"
+              },
+              "sizes": {
+                "type": "component"
+              },
+              "reviews": {
+                "type": "component"
+              },
+              "vendor": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "brand": {
+                "type": "string"
+              },
+              "breif_desc": {
+                "type": "component"
+              },
+              "specs": {
+                "type": "component"
+              },
+              "qty_sold": {
+                "type": "integer"
+              },
+              "commission": {
+                "type": "integer"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
                 "type": "string"
               }
             }
           },
-          "vendor": {
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewReview": {
+        "properties": {
+          "author": {
             "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "store": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -902,7 +775,7 @@
   },
   "tags": [
     {
-      "name": "Orders"
+      "name": "Review"
     }
   ]
 }

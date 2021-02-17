@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_statuses",
+  "info": {
+    "name": "order_status",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

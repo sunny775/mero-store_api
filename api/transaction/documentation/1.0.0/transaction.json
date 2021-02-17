@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/orders": {
+    "/transactions": {
       "get": {
         "deprecated": false,
-        "description": "Find all the orders's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Orders"
+                    "$ref": "#/components/schemas/Transaction"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new orders record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "requestBody": {
           "description": "",
@@ -247,134 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrders"
+                "$ref": "#/components/schemas/NewTransaction"
               }
             }
           }
         }
       }
     },
-    "/orders/verify-payment": {
+    "/transactions/count": {
       "get": {
         "deprecated": false,
         "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Orders"
-        ],
-        "parameters": []
-      }
-    },
-    "/orders/invoice": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "Retrieve orders document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Orders"
-        ],
-        "parameters": []
-      }
-    },
-    "/orders/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of orders documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -420,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "parameters": []
       }
     },
-    "/orders/{id}": {
+    "/transactions/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one orders record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -473,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "parameters": [
           {
@@ -490,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single orders record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve orders document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Orders"
+                  "$ref": "#/components/schemas/Transaction"
                 }
               }
             }
@@ -535,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "requestBody": {
           "description": "",
@@ -543,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrders"
+                "$ref": "#/components/schemas/NewTransaction"
               }
             }
           }
@@ -563,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single orders record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single orders based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -609,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Orders"
+          "Transaction"
         ],
         "parameters": [
           {
@@ -628,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Orders": {
+      "Transaction": {
         "required": [
           "id"
         ],
@@ -636,114 +522,20 @@
           "id": {
             "type": "string"
           },
-          "invoice_total": {
+          "tx_ref": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "charged_amount": {
             "type": "number"
           },
-          "shipping_cost": {
-            "type": "number"
+          "type": {
+            "type": "string"
           },
-          "payments": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "tx_ref": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "charged_amount": {
-                "type": "number"
-              },
-              "type": {
-                "type": "string"
-              },
-              "terms": {
-                "type": "string"
-              },
-              "vendor": {
-                "type": "string"
-              },
-              "customer": {
-                "type": "component"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "customer": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "street": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "state": {
-                    "type": "string"
-                  }
-                }
-              },
-              "email": {
-                "type": "string"
-              },
-              "phonenumber": {
-                "type": "string"
-              }
-            }
-          },
-          "items": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "item_total": {
-                "type": "number"
-              },
-              "qty": {
-                "type": "integer"
-              },
-              "image_url": {
-                "type": "string"
-              }
-            }
+          "terms": {
+            "type": "string"
           },
           "vendor": {
             "required": [
@@ -807,88 +599,114 @@
                 "type": "string"
               }
             }
+          },
+          "customer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "street": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phonenumber": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
-      "NewOrders": {
+      "NewTransaction": {
         "properties": {
-          "invoice_total": {
-            "type": "number"
-          },
-          "shipping_cost": {
-            "type": "number"
-          },
-          "payments": {
+          "tx_ref": {
             "type": "string"
           },
-          "customer": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "street": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "state": {
-                    "type": "string"
-                  }
-                }
-              },
-              "email": {
-                "type": "string"
-              },
-              "phonenumber": {
-                "type": "string"
-              }
-            }
+          "status": {
+            "type": "string"
           },
-          "items": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "item_total": {
-                "type": "number"
-              },
-              "qty": {
-                "type": "integer"
-              },
-              "image_url": {
-                "type": "string"
-              }
-            }
+          "charged_amount": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          },
+          "terms": {
+            "type": "string"
           },
           "vendor": {
             "type": "string"
+          },
+          "customer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "object",
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "street": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phonenumber": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "created_by": {
             "type": "string"
@@ -902,7 +720,7 @@
   },
   "tags": [
     {
-      "name": "Orders"
+      "name": "Transaction"
     }
   ]
 }

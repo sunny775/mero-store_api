@@ -1288,6 +1288,9 @@
               "linkedin_link": {
                 "type": "string"
               },
+              "reg_no": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
