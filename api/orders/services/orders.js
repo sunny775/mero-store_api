@@ -1,5 +1,5 @@
 'use strict';
-const fetch = require('node-fetch');
+const axios = require('axios').default;
 const PdfPrinter = require('pdfmake/src/printer');
 
 /**
@@ -13,15 +13,16 @@ module.exports = {
 
     try {
       // const tx_ref = nanoid();
-      const { id, amount, tx_ref, customer } = data;
+      const { id, token, amount, tx_ref, customer } = data;
       const pi = {
         tx_ref,
         amount,
         currency: "NGN",
-        redirect_url: `${process.env.CLIENT_BASE_URL}/payment-information`,
+        redirect_url: `${process.env.CLIENT_BASE_URL}/account/payment-result`,
         payment_options: "card",
         meta: {
           consumer_id: id,
+          token,
         },
         customer: {
           email: customer.email,
@@ -35,36 +36,28 @@ module.exports = {
         }
       }
 
-      return fetch('https://api.flutterwave.com/v3/payments', {
-        method: 'post',
-        body: JSON.stringify(pi),
-        headers: { Authorization: `Bearer ${process.env.FLUTTERWAVE_SECRET_KEY}` },
+      return axios.post('https://api.flutterwave.com/v3/payments', pi, {
+        headers: {
+          'Authorization': `Bearer ${process.env.FLUTTERWAVE_SECRET_KEY}`
+        }
       })
-        .then(res => res.json())
+      .then(res=>res.data)
 
     } catch (error) {
       throw new Error(error);
     }
   },
 
-  async verify(data) {
-    try {
-      const { tx_ref } = data;
-      return fetch(`https://api.flutterwave.com/v3/transactions/${tx_ref}/verify`, {
-        method: 'get',
+  async verify(tx_ref) {
+      return axios.get(`https://api.flutterwave.com/v3/transactions/${tx_ref}/verify`, {
         headers: { Authorization: `Bearer ${process.env.FLUTTERWAVE_SECRET_KEY}` },
       })
-        .then(res => res.json())
-    } catch (error) {
-      throw new Error(error);
-    }
   },
 
   async savePayment(data) {
     const validData = await strapi.entityValidator.validateEntityCreation(strapi.models.transaction, data);
 
-    const result = strapi.query('transaction').model.create(validData);
-    return result;
+    return strapi.query('transaction').model.create(validData);
   },
 
   async saveOrder(data) {

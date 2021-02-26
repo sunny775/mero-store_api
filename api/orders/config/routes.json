@@ -13,7 +13,7 @@
       "path": "/orders/verify-payment",
       "handler": "orders.verify",
       "config": {
-        "policies": null
+        "policies": []
       }
     },
     {

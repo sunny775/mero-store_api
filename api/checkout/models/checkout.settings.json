@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkouts",
+  "info": {
+    "name": "checkout"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tx_ref": {
+      "type": "string"
+    },
+    "token": {
+      "type": "text"
+    }
+  }
+}

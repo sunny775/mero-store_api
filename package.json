@@ -11,10 +11,11 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "axios": "^0.21.1",
+    "jsonwebtoken": "^8.5.1",
     "knex": "<0.20.0",
     "lodash": "^4.17.20",
     "nanoid": "^3.1.20",
-    "node-fetch": "^2.6.1",
     "pdfmake": "^0.1.70",
     "slugify": "^1.4.6",
     "sqlite3": "latest",

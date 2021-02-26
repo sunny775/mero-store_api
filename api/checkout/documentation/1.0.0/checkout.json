@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/reviews": {
+    "/checkouts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Review"
+                    "$ref": "#/components/schemas/Checkout"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/Checkout"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReview"
+                "$ref": "#/components/schemas/NewCheckout"
               }
             }
           }
         }
       }
     },
-    "/reviews/count": {
+    "/checkouts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "parameters": []
       }
     },
-    "/reviews/{id}": {
+    "/checkouts/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/Checkout"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/Checkout"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReview"
+                "$ref": "#/components/schemas/NewCheckout"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Checkout"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Review": {
+      "Checkout": {
         "required": [
           "id"
         ],
@@ -522,222 +522,11 @@
           "id": {
             "type": "string"
           },
-          "author": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "store": {
-                "type": "string"
-              },
-              "storeName": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "fullName": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string"
-              },
-              "birthday": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "content": {
+          "tx_ref": {
             "type": "string"
           },
-          "store": {
-            "required": [
-              "id",
-              "title",
-              "desc"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "desc": {
-                "type": "string"
-              },
-              "profilePhoto": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "string"
-              },
-              "address": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "facebook_link": {
-                "type": "string"
-              },
-              "twitter_link": {
-                "type": "string"
-              },
-              "linkedin_link": {
-                "type": "string"
-              },
-              "reg_no": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "product": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "string"
-              },
-              "images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "price": {
-                "type": "integer"
-              },
-              "inventory": {
-                "type": "integer"
-              },
-              "rating": {
-                "type": "number"
-              },
-              "is_featured": {
-                "type": "boolean"
-              },
-              "is_hot": {
-                "type": "boolean"
-              },
-              "is_out_of_stock": {
-                "type": "boolean"
-              },
-              "is_active": {
-                "type": "boolean"
-              },
-              "is_sale": {
-                "type": "boolean"
-              },
-              "is_deal_of_the_day": {
-                "type": "boolean"
-              },
-              "is_black_friday": {
-                "type": "boolean"
-              },
-              "is_new": {
-                "type": "boolean"
-              },
-              "is_best_seller": {
-                "type": "boolean"
-              },
-              "description": {
-                "type": "string"
-              },
-              "colors": {
-                "type": "component"
-              },
-              "sizes": {
-                "type": "component"
-              },
-              "reviews": {
-                "type": "component"
-              },
-              "vendor": {
-                "type": "string"
-              },
-              "category": {
-                "type": "string"
-              },
-              "brand": {
-                "type": "string"
-              },
-              "breif_desc": {
-                "type": "component"
-              },
-              "specs": {
-                "type": "component"
-              },
-              "qty_sold": {
-                "type": "integer"
-              },
-              "commission": {
-                "type": "integer"
-              },
-              "original_price": {
-                "type": "integer"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "token": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -745,18 +534,12 @@
           }
         }
       },
-      "NewReview": {
+      "NewCheckout": {
         "properties": {
-          "author": {
+          "tx_ref": {
             "type": "string"
           },
-          "content": {
-            "type": "string"
-          },
-          "store": {
-            "type": "string"
-          },
-          "product": {
+          "token": {
             "type": "string"
           },
           "published_at": {
@@ -775,7 +558,7 @@
   },
   "tags": [
     {
-      "name": "Review"
+      "name": "Checkout"
     }
   ]
 }

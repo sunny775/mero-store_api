@@ -684,9 +684,6 @@
           "price": {
             "type": "integer"
           },
-          "sale_price": {
-            "type": "integer"
-          },
           "inventory": {
             "type": "integer"
           },
@@ -956,6 +953,9 @@
           "commission": {
             "type": "integer",
             "default": 8
+          },
+          "original_price": {
+            "type": "integer"
           }
         }
       },
@@ -968,9 +968,6 @@
             "type": "string"
           },
           "price": {
-            "type": "integer"
-          },
-          "sale_price": {
             "type": "integer"
           },
           "inventory": {
@@ -1128,6 +1125,9 @@
           "commission": {
             "type": "integer",
             "default": 8
+          },
+          "original_price": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

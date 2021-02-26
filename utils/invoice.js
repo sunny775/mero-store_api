@@ -63,7 +63,7 @@ function getInvoice(data){
             type: 'none',
             ul: [
               { text: 'BILLED TO', style: 'totalHead' },
-              customer.name,
+              `customer.name ( ${customer.email} )`,
               cusomer.address.street,
               `${customer.address.city}, ${customer.address.state}`,
             ]
